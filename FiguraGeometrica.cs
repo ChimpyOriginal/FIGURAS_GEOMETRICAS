@@ -14,13 +14,20 @@ namespace HERENCIA
         public FiguraGeometrica(string nombre)
         {
             this.nombre = nombre;
+            Console.WriteLine($"\nEl constructor de FiguraGeometrica ({nombre}) ha sido invocado :).");
         }
-        public override string ToString()
+
+        ~FiguraGeometrica()
         {
-            return $"Figura: {Nombre} - Área: {CalcularArea():F1} u^2 - Perímetro: {CalcularPerimetro():F1} u\n";
+            Console.WriteLine($"El destructor de FiguraGeometrica ({nombre}) ha sido invocadoo :(.");
         }
-        
+
         public abstract double CalcularArea();
         public abstract double CalcularPerimetro();
+
+        public override string ToString()
+        {
+            return $"\nFigura: {Nombre} - Área: {CalcularArea():F1} u^2 - Perímetro: {CalcularPerimetro():F1} u\n";
+        }
     }
 }

@@ -7,34 +7,21 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace HERENCIA
 {
-    public class Pentagono : FiguraGeometrica
+    public class Pentagono : Poligono
     {
-        private double lado;
-        private double apotema;
-
-        public double Lado { get { return lado; } }
-        public double Apotema { get { return apotema; } }
-        public Pentagono(double lado, double apotema) : base("Pentágono")
+        public Pentagono(double lado, double apotema) : base("Pentágono", lado, apotema)
         {
-            this.lado = lado;
-            this.apotema = apotema;
+            Console.WriteLine("El constructor de Pentágono ha sido invocadoo.");
         }
 
-        // Método para el del cálculo de área
-        public override double CalcularArea()
+        ~Pentagono()
         {
-            double perimetro = CalcularPerimetro();
-            return (perimetro * apotema) / 2;
+            Console.WriteLine("El destructor de Pentágono ha sido invocadoo.");
         }
 
-        // Método para el cálculo de perímetro
         public override double CalcularPerimetro()
         {
             return lado * 5;
-        }
-        ~Pentagono()
-        {
-            Console.WriteLine("Destructor");
         }
     }
 }

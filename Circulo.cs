@@ -15,23 +15,22 @@ namespace HERENCIA
         public Circulo(double radio) : base("Círculo")
         {
             this.radio = radio;
+            Console.WriteLine("El constructor de Círculo ha sido invocadoo.");
         }
 
-
-        // Método para el del cálculo de área
-        public override double CalcularArea()
-        {
-            return (Math.PI * (radio * radio));
-        }
-
-        // Método para el cálculo de perímetro
-        public override double CalcularPerimetro()
-        {
-            return (Math.PI * (radio * 2));
-        }
         ~Circulo()
         {
-            Console.WriteLine("Destructor");
+            Console.WriteLine("El destructor del Círculo ha sido invocadoo.");
+        }
+
+        public override double CalcularArea()
+        {
+            return Math.PI * radio * radio;
+        }
+
+        public override double CalcularPerimetro()
+        {
+            return 2 * Math.PI * radio;
         }
     }
 }

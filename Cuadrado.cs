@@ -7,31 +7,29 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace HERENCIA
 {
-    public class Cuadrado: FiguraGeometrica
+    public class Cuadrado : FiguraGeometrica
     {
         private double lado;
-        public double Lado { get { return lado; } }
 
         public Cuadrado(double lado) : base("Cuadrado")
         {
             this.lado = lado;
+            Console.WriteLine("El constructor de Cuadrado ha sido invocadoo.");
         }
-        
 
-        // Método para el del cálculo de área
+        ~Cuadrado()
+        {
+            Console.WriteLine("El destructor del Cuadrado ha sido invocadoo.");
+        }
+
         public override double CalcularArea()
         {
             return lado * lado;
         }
 
-        // Método para el cálculo de perímetro
         public override double CalcularPerimetro()
         {
-            return lado *  4;
-        }
-        ~Cuadrado()
-        {
-            Console.WriteLine("Destructor");
+            return lado * 4;
         }
     }
 

@@ -12,28 +12,26 @@ namespace HERENCIA
         private double ancho;
         private double altura;
 
-        public double Ancho { get { return ancho; } }
-        public double Altura { get { return altura; } } 
         public Rectangulo(double ancho, double altura) : base("Rectángulo")
         {
             this.ancho = ancho;
             this.altura = altura;
+            Console.WriteLine("El constructor de Rectángulo ha sido invocadoo.");
         }
 
-        // Método para el del cálculo de área
+        ~Rectangulo()
+        {
+            Console.WriteLine("El destructor de Rectángulo ha sido invocadoo.");
+        }
+
         public override double CalcularArea()
         {
             return ancho * altura;
         }
 
-        // Método para el cálculo de perímetro
         public override double CalcularPerimetro()
         {
-            return (ancho*2) + (altura*2);
-        }
-        ~Rectangulo()
-        {
-            Console.WriteLine("Destructor");
+            return 2 * (ancho + altura);
         }
     }
 }
